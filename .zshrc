@@ -1,11 +1,19 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/stefanosxanthopoulos/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/stefanosx/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="pygmalion"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,23 +59,12 @@ ZSH_THEME="pygmalion"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ruby brew history history-substring-search)
 
-# User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bash_profile
-alias ww='cd ~/Dawanda'
-alias bex='bundle exec'
-alias docker_rm_exited='docker rm -v $(docker ps -a -q -f status=exited)'
-alias docker_rm_images='docker rmi $(docker images -f "dangling=true" -q)'
 
-#docker
+# User configuration
 
-#colors
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -83,7 +80,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -93,8 +90,16 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.zshenv
 
-export PATH="$HOME/.yarn/bin:$PATH"
-alias vim='nvim -d'
-export EDITOR=nvim
+# ALIAS
+alias ww="cd ~/Infopark"
+
+#Vbox alias
+#start vbox with headless type
+alias sw='VBoxManage startvm "Ubuntu14.04.3LTS-Fiona7-20G-Klon" --type headless'
+
+alias gh='VBoxManage controlvm "Ubuntu14.04.3LTS-Fiona7-20G-Klon" savestate'
+
+#neovim
+export EDITOR=vim
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
