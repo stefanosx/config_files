@@ -4,7 +4,6 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/stefanosx/.oh-my-zsh
@@ -92,14 +91,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ALIAS
-alias ww="cd ~/Infopark"
 
 #Vbox alias
 #start vbox with headless type
-alias sw='VBoxManage startvm "Ubuntu14.04.3LTS-Fiona7-20G-Klon" --type headless'
-
-alias gh='VBoxManage controlvm "Ubuntu14.04.3LTS-Fiona7-20G-Klon" savestate'
 
 #neovim
 export EDITOR=vim
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+alias docker_rm_exited='docker rm -v $(docker ps -a -q -f status=exited)'
+alias docker_rm_images='docker rmi $(docker images -f "dangling=true" -q)'
+
+alias ww="cd ~/Documents/Tourlane"
