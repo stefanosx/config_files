@@ -3,10 +3,10 @@
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/stefanosx/.oh-my-zsh
+export ZSH=/Users/stefanosxanthopoulos/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -56,7 +56,7 @@ ZSH_THEME="pygmalion"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ruby brew history history-substring-search)
+plugins=(git ruby brew bundler rails ruby yarn docker history history-substring-search)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -98,7 +98,18 @@ source $ZSH/oh-my-zsh.sh
 #neovim
 export EDITOR=vim
 
+export LC_ALL=en_US.utf-8
+export LANG="$LC_ALL"
+
 alias docker_rm_exited='docker rm -v $(docker ps -a -q -f status=exited)'
 alias docker_rm_images='docker rmi $(docker images -f "dangling=true" -q)'
 
 alias ww="cd ~/Documents/Tourlane"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH="/Users/stefanosxanthopoulos/Documents/Tourlane:$PATH"
+
+eval $(thefuck --alias)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
