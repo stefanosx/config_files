@@ -11,6 +11,10 @@ if test ! $(which brew); then
     echo "Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+echo 'generate ssh key'
+cd ~/.ssh | ssh-keygen -t rsa -b 4096 -C "stefanosx@gmail.com" -N "" -f 'github' -q
+
 echo 'update brew'
 brew update
 
